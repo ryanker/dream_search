@@ -34,7 +34,7 @@ function init() {
 function saveOption(options) {
     l.menuText = options.menuText || menuDefault
     l.searchText = options.searchText || searchDefault
-    l.searchWidth = options.searchWidth > 760 ? 760 : options.searchWidth < 360 ? 360 : options.searchWidth
+    l.searchWidth = options.searchWidth < 360 ? 360 : options.searchWidth > 760 ? 760 : options.searchWidth
 
     menuList = optionFormat(l.menuText)
     searchList = optionFormat(l.searchText)
