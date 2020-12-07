@@ -16,6 +16,7 @@
     "default_title": "梦想综合搜索",
     "default_icon": "128.png"
   },
+  "options_page": "option.html",
   "permissions": [
     "contextMenus"
   ],

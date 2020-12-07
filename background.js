@@ -1,7 +1,6 @@
 'use strict'
 
-let searchDefault = `
-百度搜索|https://www.baidu.com/s?wd={0}
+let searchDefault = `百度搜索|https://www.baidu.com/s?wd={0}
 谷歌搜索|https://www.google.com/search?q={0}
 必应搜索|https://cn.bing.com/search?q={0}
 360搜索|https://www.baidu.com/s?wd={0}
@@ -11,8 +10,8 @@ let searchDefault = `
 
 let menuDefault = `百度搜索|https://www.baidu.com/s?wd={0}`
 
-let isChrome = typeof browser === "undefined" || Object.getPrototypeOf(browser) !== Object.prototype
-var searchList, searchText, menuList
+let l = localStorage
+var menuList, searchList, searchWidth = 360, searchText = ''
 init()
 
 String.prototype.format = function () {
@@ -23,8 +22,23 @@ String.prototype.format = function () {
 }
 
 function init() {
-    searchList = optionFormat(searchDefault)
-    menuList = optionFormat(menuDefault)
+    l.menuText = l.menuText || menuDefault
+    l.searchText = l.searchText || searchDefault
+    l.searchWidth = l.searchWidth || searchWidth
+
+    menuList = optionFormat(l.menuText)
+    searchList = optionFormat(l.searchText)
+    initMenu(menuList)
+}
+
+function saveOption(options) {
+    l.menuText = options.menuText || menuDefault
+    l.searchText = options.searchText || searchDefault
+    l.searchWidth = options.searchWidth > 760 ? 760 : options.searchWidth < 360 ? 360 : options.searchWidth
+
+    menuList = optionFormat(l.menuText)
+    searchList = optionFormat(l.searchText)
+    searchWidth = l.searchWidth
     initMenu(menuList)
 }
 
@@ -71,35 +85,6 @@ function addMenu(v) {
         contexts: ['selection'],
         onclick: function (info) {
             open(v.url.format(decodeURIComponent(info.selectionText)))
-        }
-    })
-}
-
-function syncGet(options) {
-    return apiToPromise(chrome.storage.sync.get, options)
-}
-
-function syncSet(options) {
-    return apiToPromise(chrome.storage.sync.set, options)
-}
-
-function apiToPromise(api, options) {
-    return new Promise((resolve, reject) => {
-        if (isChrome) {
-            api(options, function (r) {
-                let err = chrome.runtime.lastError
-                if (err) {
-                    reject(err)
-                } else {
-                    resolve(r)
-                }
-            })
-        } else {
-            api(options).then(r => {
-                resolve(r)
-            }).catch(err => {
-                reject(err)
-            })
         }
     })
 }

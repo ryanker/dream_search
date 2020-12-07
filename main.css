@@ -6,7 +6,7 @@ html, body, p, h1, h2, h3, h4, h5, h6 {
 body {
     padding: 10px;
     background: #F1F4F6;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
     user-select: none;
 }
@@ -26,26 +26,36 @@ body {
     margin-top: 10px;
 }
 
+.main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .search_main {
     width: 360px;
 }
 
-.search_box {
-    border-radius: 8px;
+.dmx_input {
     background: #ffffff;
     border: 1px solid #cfd0d2;
+    border-radius: 8px;
     color: #4e5053;
-    height: 30px;
+    padding: 3px 8px;
     line-height: 30px;
-    padding: 3px 63px 3px 8px;
-    position: relative;
+    font-size: 16px;
     transition: all .2s linear;
 }
 
-.search_box:hover {
+.dmx_input:hover {
     border-color: #409eff;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-    transform: scale(1.005);
+    /*transform: scale(1.005);*/
+}
+
+.search_box {
+    position: relative;
+    height: 30px;
+    padding: 3px 63px 3px 8px;
 }
 
 .search_box > input {
@@ -87,15 +97,9 @@ body {
     opacity: 1;
 }
 
-.but_box {
-    width: calc(100% + 10px);
-    margin-left: -10px;
-}
-
 .dmx_button {
     display: inline-block;
     float: left;
-    margin: 10px 0 0 10px;
     background: #4395ff;
     border: 1px solid #3589ff;
     border-radius: 4px;
@@ -118,4 +122,52 @@ body {
 
 .dmx_button:active {
     opacity: .7;
+}
+
+.but_box {
+    width: calc(100% + 10px);
+    margin-left: -10px;
+}
+
+.but_box .dmx_button {
+    margin: 10px 0 0 10px;
+}
+
+/* ============ option ============ */
+.option {
+    margin-bottom: 10px;
+}
+
+.option .title {
+    position: relative;
+}
+
+.option .title:after {
+    position: absolute;
+    top: 50%;
+    display: block;
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.option b {
+    z-index: 1;
+    position: relative;
+    background: #F1F4F6;
+    padding-right: 5px;
+}
+
+.case .dmx_input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.case .show_width {
+    width: 90px;
+}
+
+#save_option {
+    margin-top: 10px;
 }

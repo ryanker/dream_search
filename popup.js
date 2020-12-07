@@ -12,8 +12,9 @@ $('but_box').innerHTML = s
 let inpEl = $('search_input')
 let rmEl = $('search_remove')
 let butEl = $('search_but')
-inpEl.value = bg.searchText
+inpEl.value = bg.searchText || ''
 rmEl.style.display = bg.searchText ? 'block' : 'none'
+document.querySelector('.search_main').style.width = (bg.searchWidth || 360) + 'px'
 butEl.onclick = function () {
     $('but_box').querySelector('.dmx_button')?.click()
 }
