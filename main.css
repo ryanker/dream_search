@@ -124,6 +124,12 @@ body {
     opacity: .7;
 }
 
+.dmx_button_default {
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+}
+
 .but_box {
     width: calc(100% + 10px);
     margin-left: -10px;
@@ -168,6 +174,10 @@ body {
     width: 90px;
 }
 
-#save_option {
-    margin-top: 10px;
+.option_but {
+    margin: 20px 0;
+}
+
+#reset_option {
+    margin-left: 10px
 }
