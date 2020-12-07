@@ -12,7 +12,7 @@ let searchDefault = `
 let menuDefault = `百度搜索|https://www.baidu.com/s?wd={0}`
 
 let isChrome = typeof browser === "undefined" || Object.getPrototypeOf(browser) !== Object.prototype
-var searchList, menuList
+var searchList, searchText, menuList
 init()
 
 String.prototype.format = function () {
