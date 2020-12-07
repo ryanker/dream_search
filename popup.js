@@ -13,18 +13,23 @@ let inpEl = $('search_input')
 let rmEl = $('search_remove')
 let butEl = $('search_but')
 inpEl.value = bg.searchText
+rmEl.style.display = bg.searchText ? 'block' : 'none'
 butEl.onclick = function () {
     $('but_box').querySelector('.dmx_button')?.click()
 }
 rmEl.onclick = function () {
     inpEl.value = ''
     bg.searchText = ''
+    rmEl.style.display = 'none'
 }
 inpEl.onkeyup = function (e) {
     e.key === 'Enter' && butEl.click()
+    rmEl.style.display = inpEl.value ? 'block' : 'none'
 }
 inpEl.onchange = function () {
-    bg.searchText = this.value
+    let text = this.value.trim()
+    bg.searchText = text
+    rmEl.style.display = text ? 'block' : 'none'
 }
 A('.dmx_button').forEach(el => {
     el.addEventListener('click', function () {
