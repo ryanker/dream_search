@@ -12,7 +12,12 @@ $('but_box').innerHTML = s
 A('.dmx_button').forEach(el => {
     el.addEventListener('click', function () {
         let text = $('search_input').value.trim()
-        text && open(el.dataset.url.replace('{0}', decodeURIComponent(text)))
+        let url = el.dataset.url
+        if (text) {
+            open(url.replace('{0}', decodeURIComponent(text)))
+        } else {
+            open((new URL(url)).origin)
+        }
     })
 })
 
