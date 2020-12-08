@@ -1,6 +1,7 @@
 let bg = chrome.extension.getBackgroundPage()
 
-let nameEl = document.querySelectorAll('[name]')
+let nameEl = document.querySelectorAll('input[name]')
+let widthEl = document.querySelector('input[name="searchWidth"]')
 let saveEl = document.getElementById('save_option')
 let resetEl = document.getElementById('reset_option')
 
@@ -8,6 +9,11 @@ let resetEl = document.getElementById('reset_option')
 nameEl.forEach(el => {
     el.value = (localStorage[el.name] || '').trim()
 })
+
+widthEl.onchange = function () {
+    let w = this.value
+    this.value = w < 360 ? 360 : w > 760 ? 760 : w
+}
 
 // 保存
 saveEl.onclick = function () {

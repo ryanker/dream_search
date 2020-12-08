@@ -11,7 +11,7 @@ let searchDefault = `百度搜索|https://www.baidu.com/s?wd={0}
 let menuDefault = `百度搜索|https://www.baidu.com/s?wd={0}`
 
 let l = localStorage
-var menuList, searchList, searchWidth = 360, searchText = ''
+var menuList, searchList, searchWidth = 640, searchText = ''
 init()
 
 String.prototype.format = function () {
@@ -34,7 +34,9 @@ function init() {
 function saveOption(options) {
     l.menuText = options.menuText || menuDefault
     l.searchText = options.searchText || searchDefault
-    l.searchWidth = options.searchWidth < 360 ? 360 : options.searchWidth > 760 ? 760 : options.searchWidth
+
+    let w = options.searchWidth
+    l.searchWidth = w ? w < 360 ? 360 : w > 760 ? 760 : w : searchWidth
 
     menuList = optionFormat(l.menuText)
     searchList = optionFormat(l.searchText)
