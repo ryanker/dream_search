@@ -7,11 +7,11 @@ let searchDefault = `百度搜索|https://www.baidu.com/s?wd={0}
 搜狗搜索|https://www.sogou.com/web?query={0}
 维基百科|https://zh.wikipedia.org/w/index.php?search={0}
 百度百科|https://baike.baidu.com/search/word?word={0}`
-
 let menuDefault = `百度搜索|https://www.baidu.com/s?wd={0}`
+let widthDefault = 640
 
 let l = localStorage
-var menuList, searchList, searchWidth = 640, searchText = ''
+var menuList, searchList, searchWidth, searchText
 init()
 
 String.prototype.format = function () {
@@ -24,10 +24,14 @@ String.prototype.format = function () {
 function init() {
     l.menuText = l.menuText || menuDefault
     l.searchText = l.searchText || searchDefault
-    l.searchWidth = l.searchWidth || searchWidth
+    l.searchWidth = l.searchWidth || widthDefault
+    initVal()
+}
 
+function initVal() {
     menuList = optionFormat(l.menuText)
     searchList = optionFormat(l.searchText)
+    searchWidth = l.searchWidth
     initMenu(menuList)
 }
 
@@ -36,12 +40,8 @@ function saveOption(options) {
     l.searchText = options.searchText || searchDefault
 
     let w = options.searchWidth
-    l.searchWidth = w ? w < 360 ? 360 : w > 760 ? 760 : w : searchWidth
-
-    menuList = optionFormat(l.menuText)
-    searchList = optionFormat(l.searchText)
-    searchWidth = l.searchWidth
-    initMenu(menuList)
+    l.searchWidth = w ? w < 360 ? 360 : w > 760 ? 760 : w : widthDefault
+    initVal()
 }
 
 function optionFormat(s) {
