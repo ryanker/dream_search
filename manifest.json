@@ -16,7 +16,10 @@
     "default_title": "梦想综合搜索",
     "default_icon": "128.png"
   },
-  "options_page": "option.html",
+  "options_ui": {
+    "page": "option.html",
+    "open_in_tab": true
+  },
   "permissions": [
     "contextMenus"
   ],
