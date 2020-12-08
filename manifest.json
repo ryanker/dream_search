@@ -1,7 +1,7 @@
 {
   "name": "梦想综合搜索",
   "description": "综合百度、谷歌、必应、360、搜狗、维基百科和百度百科搜索功能。",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 2,
   "icons": {
     "128": "128.png"
