@@ -78,7 +78,7 @@ function addMenu(v) {
         title: v.title + '首页',
         contexts: ['page'],
         onclick: function () {
-            open((new URL(v.url)).origin)
+            chrome.tabs.create({url: (new URL(v.url)).origin})
         }
     })
     create({
@@ -86,7 +86,7 @@ function addMenu(v) {
         title: v.title + '“%s”',
         contexts: ['selection'],
         onclick: function (info) {
-            open(v.url.format(decodeURIComponent(info.selectionText)))
+            chrome.tabs.create({url: v.url.format(decodeURIComponent(info.selectionText))})
         }
     })
 }
