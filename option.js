@@ -1,6 +1,6 @@
 let bg = chrome.extension.getBackgroundPage()
 
-let nameEl = document.querySelectorAll('input[name]')
+let nameEl = document.querySelectorAll('[name]')
 let widthEl = document.querySelector('input[name="searchWidth"]')
 let saveEl = document.getElementById('save_option')
 let resetEl = document.getElementById('reset_option')
