@@ -23,7 +23,7 @@
   "permissions": [
     "contextMenus"
   ],
-  "homepage_url": "http://www.ddmx.com",
+  "homepage_url": "https://github.com/ryanker/dream_search",
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
