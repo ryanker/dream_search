@@ -37,8 +37,7 @@ A('.dmx_button').forEach(el => {
     el.addEventListener('click', function () {
         let text = inpEl.value.trim()
         let url = el.dataset.url
-        url = url.replace('{0}', decodeURIComponent(text))
-        if (text) chrome.tabs.create({url})
+        if (text) chrome.tabs.create({url: url.replace('{0}', decodeURIComponent(text))})
     })
 })
 
