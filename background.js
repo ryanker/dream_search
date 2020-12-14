@@ -3,7 +3,7 @@
 let searchDefault = `百度搜索|https://www.baidu.com/s?wd={0}
 谷歌搜索|https://www.google.com/search?q={0}
 必应搜索|https://cn.bing.com/search?q={0}
-360搜索|https://www.baidu.com/s?wd={0}
+360搜索|https://www.so.com/s?q={0}
 搜狗搜索|https://www.sogou.com/web?query={0}
 维基百科|https://zh.wikipedia.org/w/index.php?search={0}
 百度百科|https://baike.baidu.com/search/word?word={0}`
