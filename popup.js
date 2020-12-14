@@ -13,6 +13,7 @@ let inpEl = $('search_input')
 let rmEl = $('search_remove')
 let butEl = $('search_but')
 inpEl.value = bg.searchText || ''
+inpEl.focus()
 rmEl.style.display = bg.searchText ? 'block' : 'none'
 document.querySelector('.search_main').style.width = (bg.searchWidth || 360) + 'px'
 butEl.onclick = function () {
