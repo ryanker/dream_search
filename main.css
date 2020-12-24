@@ -114,15 +114,17 @@ body {
     box-sizing: border-box;
     user-select: none;
     cursor: pointer;
+    opacity: .9;
     transition: .1s;
 }
 
 .dmx_button:hover {
+    opacity: 1;
     box-shadow: 2px 2px 5px 0 #d0d7de;
 }
 
 .dmx_button:active {
-    opacity: .7;
+    opacity: .8;
 }
 
 .dmx_button_default {
