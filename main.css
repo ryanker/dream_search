@@ -120,7 +120,7 @@ body {
 
 .dmx_button:hover {
     opacity: 1;
-    box-shadow: 2px 2px 5px 0 #d0d7de;
+    box-shadow: 0 2px 5px 0 #7b7f84;
 }
 
 .dmx_button:active {

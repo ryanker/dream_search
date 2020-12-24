@@ -2,11 +2,14 @@ let bg = chrome.extension.getBackgroundPage()
 let searchList = bg.searchList
 
 // 生成按钮
-let s = ''
+let butBox = $('but_box')
 searchList && searchList.forEach(v => {
-    s += `<div class="dmx_button" data-url="${v.url}">${v.title}</div>`
+    let d = document.createElement('div')
+    d.className = 'dmx_button'
+    d.dataset.url = v.url
+    d.textContent = v.title
+    butBox.appendChild(d)
 })
-$('but_box').innerHTML = s
 
 // 绑定事件
 let inpEl = $('search_input')
@@ -17,7 +20,7 @@ inpEl.focus()
 rmEl.style.display = bg.searchText ? 'block' : 'none'
 document.querySelector('.search_main').style.width = (bg.searchWidth || 360) + 'px'
 butEl.onclick = function () {
-    $('but_box').querySelector('.dmx_button')?.click()
+    butBox.querySelector('.dmx_button')?.click()
 }
 rmEl.onclick = function () {
     inpEl.value = ''
