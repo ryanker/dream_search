@@ -20,7 +20,8 @@ inpEl.focus()
 rmEl.style.display = bg.searchText ? 'block' : 'none'
 document.querySelector('.search_main').style.width = (bg.searchWidth || 360) + 'px'
 butEl.onclick = function () {
-    butBox.querySelector('.dmx_button')?.click()
+    let but = butBox.querySelector('.dmx_button')
+    but && but.click()
 }
 rmEl.onclick = function () {
     inpEl.value = ''
