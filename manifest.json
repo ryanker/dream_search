@@ -24,7 +24,6 @@
     "contextMenus"
   ],
   "homepage_url": "https://github.com/ryanker/dream_search",
-  "update_url": "https://clients2.google.com/service/update2/crx",
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
