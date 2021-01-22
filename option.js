@@ -7,7 +7,12 @@ let resetEl = document.getElementById('reset_option')
 
 // 加载
 nameEl.forEach(el => {
-    el.value = (localStorage[el.name] || '').trim()
+    let val = localStorage[el.name] || ''
+    if (el.type === 'checkbox') {
+        if (val === 'true') el.checked = true
+    } else {
+        el.value = val.trim()
+    }
 })
 
 widthEl.onchange = function () {
@@ -19,7 +24,11 @@ widthEl.onchange = function () {
 saveEl.onclick = function () {
     let obj = {}
     nameEl.forEach(el => {
-        obj[el.name] = el.value.trim()
+        if (el.type === 'checkbox') {
+            obj[el.name] = el.checked
+        } else {
+            obj[el.name] = el.value.trim()
+        }
     })
     bg.saveOption(obj)
     setTimeout(() => {

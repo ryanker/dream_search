@@ -38,6 +38,7 @@ function initVal() {
 function saveOption(options) {
     l.menuText = options.menuText || menuDefault
     l.searchText = options.searchText || searchDefault
+    l.selectAll = options.selectAll || false
 
     let w = options.searchWidth
     l.searchWidth = w ? w < 360 ? 360 : w > 760 ? 760 : w : widthDefault

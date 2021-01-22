@@ -167,6 +167,15 @@ body {
     padding-right: 5px;
 }
 
+.case {
+    display: flex;
+    align-items: center;
+}
+
+.case input[type=checkbox] {
+    margin-right: 6px;
+}
+
 .case .dmx_input {
     display: block;
     width: 100%;
