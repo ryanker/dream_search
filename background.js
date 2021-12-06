@@ -1,13 +1,28 @@
 'use strict'
 
-let searchDefault = `百度搜索|https://www.baidu.com/s?wd={0}
-谷歌搜索|https://www.google.com/search?q={0}
+let searchDefault = `
+百度搜索|https://www.baidu.com/s?wd={0}
 谷歌搜索|https://www.google.com/search?q={0}
 必应搜索|https://cn.bing.com/search?q={0}
 360搜索|https://www.so.com/s?q={0}
 搜狗搜索|https://www.sogou.com/web?query={0}
 维基百科|https://zh.wikipedia.org/w/index.php?search={0}
-百度百科|https://baike.baidu.com/search/word?word={0}`
+百度百科|https://baike.baidu.com/search/word?word={0}
+Github|https://github.com/search?q={0}
+CSDN|https://so.csdn.net/so/search?q={0}
+知乎|https://www.zhihu.com/search?type=content&q={0}
+微博|https://s.weibo.com/weibo?q={0}
+微信文章|https://weixin.sogou.com/weixin?type=2&query={0}
+微信公众号|https://weixin.sogou.com/weixin?type=1&query={0}
+bilibili|https://search.bilibili.com/all?keyword={0}
+bt|https://a8.fan55.top/s?word={0}
+淘宝|https://s.taobao.com/search?q={0}
+Yandex|https://yandex.com/search/?text={0}
+京东|https://search.jd.com/Search?keyword={0}
+百度学术|https://xueshu.baidu.com/s?wd={0}
+PUBMED|https://pubmed.ncbi.nlm.nih.gov/?term={0}
+duckduckgo|https://duckduckgo.com/?t={0}
+`
 let menuDefault = `百度搜索|https://www.baidu.com/s?wd={0}`
 let widthDefault = 640
 
