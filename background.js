@@ -87,7 +87,14 @@ function addMenu(v) {
         title: v.title + '“%s”',
         contexts: ['selection'],
         onclick: function (info) {
-            chrome.tabs.create({url: v.url.format(decodeURIComponent(info.selectionText))})
+            chrome.tabs.create({url: v.url.format(decodeURL(info.selectionText))})
         }
     })
+}
+
+function decodeURL(s) {
+    s = decodeURIComponent(s)
+    s = s.replace(/#/g, '%23')
+    s = s.replace(/&/g, '%26')
+    return s
 }
